@@ -1,0 +1,40 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #0f0f0f;
+    fg: #ffffff;
+    accent: #00a19c; /* Cyan Petronas */
+    button: #1a1a1a;
+
+    background-color: @bg;
+    text-color: @fg;
+}
+
+window {
+    width: 30%;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 12px; /* Angles arrondis comme ton Hyprland */
+    padding: 20px;
+}
+
+element {
+    padding: 8px;
+    spacing: 10px;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+    border-radius: 5px;
+}
