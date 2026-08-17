@@ -23,6 +23,19 @@
 		#navigateur
 		inputs.zen-browser.packages."${pkgs.system}".default
 
+		#display
+		wdisplays
+
+		#game
+		steam
+		steam-unwrapped
+
 
 	];
+
+	programs.steam = {
+	enable = true;
+	remotePlay.openFirewall =true;
+	dedicatedServer.OpenFirewall = true;
+	};
 }
