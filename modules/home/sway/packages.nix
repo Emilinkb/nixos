@@ -1,24 +1,15 @@
-{pkgs, ...}:
-
+{ pkgs, ... }:
 
 {
+  wayland.windowManager.sway = {
+    enable = true;
+  };
 
-	environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
+    swaylock-effects
+    swayidle
+    mako
+    alacritty
     wl-clipboard
   ];
-	programs.sway = {
-
-		enable = true;
-		extraPackages = with pkgs; [
-		swaylock-effects
-		swayidle
-		mako
-		alacritty];
-	};
-
-
-
-
-
-
 }

@@ -45,10 +45,27 @@
   programs.gamescope.enable = true;
   programs.steam.gamescopeSession.enable = true;
 
+    # Enable PipeWire
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
 
-
-
-
+  # XDG Desktop Portals for Sway (wlroots)
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "*";
+  };
 
 }
+
+
+
+
+
+
+
 
