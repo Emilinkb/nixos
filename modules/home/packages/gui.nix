@@ -1,12 +1,15 @@
 {config, pkgs, inputs, ...}:
 
 {
+	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs;[
 
 		#multimedia
 		vlc
 		tidal-hifi
 		slurp
+		vesktop
+		fuzzel 
 
 
 		#bureautique
@@ -15,6 +18,7 @@
 		
 		#dev
 		sublime4
+		vscode
 
 		#communication
 		goofcord
@@ -26,16 +30,13 @@
 		#display
 		wdisplays
 
-		#game
-		steam
-		steam-unwrapped
+		#email
+		evolution
+  		evolution-ews
+
+  		#game
+  		prismlauncher
 
 
 	];
-
-	programs.steam = {
-	enable = true;
-	remotePlay.openFirewall =true;
-	dedicatedServer.OpenFirewall = true;
-	};
 }

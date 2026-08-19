@@ -28,6 +28,24 @@
     # Vos dossiers partagés si vous souhaitez les déclarer ici...
   };
 
+  
+  # Enable OpenGL / Graphics drivers (with 32-bit support)
+  hardware.graphics = {
+  enable = true;
+  enable32Bit = true;
+  };
+
+  # Steam system module
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+  programs.gamescope.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+
+
 
 
 
