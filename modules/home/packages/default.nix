@@ -5,5 +5,6 @@
         ./dev.nix
         ./gui.nix
         ./password.nix
+	./nvim.nix
     ];    
 }

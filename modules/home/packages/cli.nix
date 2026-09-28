@@ -9,6 +9,7 @@
 	nano
 
 
+
 	#outil système
 	git
 	wget
@@ -26,6 +27,7 @@
 	xdg-utils
 	polkit_gnome
 	openssl
+	unzip
 
 
 	#visualisation

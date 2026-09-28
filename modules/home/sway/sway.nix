@@ -30,7 +30,7 @@
           # xkb_options = "grp:alt_shift_toggle";
         };
         # Layout spécifique pour votre Logitech MX Keys
-        "1133:50434:Logitech_MX_Keys" = { # Note : il faudra vérifier l'ID exact via `swaymsg -t get_inputs`
+        "1133:16522:Logitech_MX_Keys" = { # Note : il faudra vérifier l'ID exact via `swaymsg -t get_inputs`
           xkb_layout = "it";
         };
       };
