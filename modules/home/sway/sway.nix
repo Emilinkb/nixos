@@ -18,9 +18,30 @@
       output = {
         "*" = {
           
-          bg = "/var/users/wallpapers/mercedes_japan.jpg fill";
+          bg = "/var/users/wallpapers/mercedes.png fill";
+        };
+
+        "HDMI-A-2" = {
+            pos = "0 0";
+            res= "1920x1080";
+        };
+
+        "DP-2" = {
+            pos = "1920 0";
+            res = "1920x1080";
         };
       };
+
+      workspaceOutputAssign = [
+        {
+            workspace = "1";
+            output = "HDMI-A-2";
+        }
+        {
+            workspace = "2";
+            output = "DP-2";
+        }
+      ];
 
       # 3. INPUT (Clavier principal fr + it)
       input = {
@@ -74,6 +95,9 @@
       
       # Thème du curseur
       seat * xcursor_theme Bibata-Modern-Ice 24
+
+      workspace 2
+      workspace 1
     '';
   };
 

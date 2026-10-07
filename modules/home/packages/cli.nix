@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, inputs, ...}:
 
 
 {
@@ -43,7 +43,7 @@
 	p7zip
 
 	#ai
-	gemini-cli
+	pkgs.antigravity-cli
 	translate-shell
 
 

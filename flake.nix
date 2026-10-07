@@ -10,13 +10,21 @@
 		};
 
 		zen-browser.url = "github:0xc000022070/zen-browser-flake";
+        antigravity.url = "github:Hy4ri/antigravity-flake";
+        	};
 
-	};
-
-	outputs = { self, nixpkgs, home-manager,zen-browser, ...}@inputs: {
+	outputs = { self, nixpkgs, home-manager,zen-browser,antigravity, ...}@inputs: {
 		nixosConfigurations.EB_Thinkpad = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
+                ({ pkgs, ... }: {
+                    nixpkgs.overlays = [
+                        (final: prev: {
+                            # On extrait le paquet du flake et on le colle directement dans pkgs
+                            antigravity-cli = inputs.antigravity.packages.${pkgs.system}.antigravity-cli;
+                        })
+                    ];
+                })
 		        ./hosts/desktop/hardware-configuration.nix
 		        ./configuration.nix # <-- Vos modules système s'importent depuis ici (ex: core)
 
