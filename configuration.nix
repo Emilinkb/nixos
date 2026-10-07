@@ -3,7 +3,7 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   imports = [
-    ./hosts/desktop/hardware-configuration.nix
+    ./hosts/laptop/hardware-configuration.nix
     ./modules/core/default.nix
   ];
 
@@ -13,17 +13,17 @@
   ];
 
   # Load the official NVIDIA driver
-  services.xserver.videoDrivers = [ "nvidia" ];
+  #services.xserver.videoDrivers = [ "nvidia" ];
 
-  hardware.nvidia = {
+  #hardware.nvidia = {
     # Modesetting is strictly required for Wayland / Sway
-    modesetting.enable = true;
+   # modesetting.enable = true;
     # RTX 4070 (AD104) uses the open kernel module
-    open = true;
-    nvidiaSettings = true;
+    #open = true;
+    #nvidiaSettings = true;
     # Power management fixes sleeping audio nodes on external displays
-    powerManagement.enable = true;
-  };
+    #powerManagement.enable = true;
+  #};
 
   # Sway configuration with NVIDIA/Wayland support
   programs.sway = {

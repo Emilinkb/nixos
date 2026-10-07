@@ -25,7 +25,7 @@
                         })
                     ];
                 })
-		        ./hosts/desktop/hardware-configuration.nix
+		        ./hosts/laptop/hardware-configuration.nix
 		        ./configuration.nix # <-- Vos modules système s'importent depuis ici (ex: core)
 
 		        home-manager.nixosModules.home-manager
