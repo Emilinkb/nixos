@@ -2,9 +2,11 @@
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
   imports = [
     ./hosts/laptop/hardware-configuration.nix
     ./modules/core/default.nix
+    ./modules/core/security.nix  # <-- Add your security module here
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -12,23 +14,9 @@
     "openssl-1.1.1w"
   ];
 
-  # Load the official NVIDIA driver
-  #services.xserver.videoDrivers = [ "nvidia" ];
-
-  #hardware.nvidia = {
-    # Modesetting is strictly required for Wayland / Sway
-   # modesetting.enable = true;
-    # RTX 4070 (AD104) uses the open kernel module
-    #open = true;
-    #nvidiaSettings = true;
-    # Power management fixes sleeping audio nodes on external displays
-    #powerManagement.enable = true;
-  #};
-
   # Sway configuration with NVIDIA/Wayland support
   programs.sway = {
     enable = true;
-    # --unsupported-gpu tells wlroots to run on NVIDIA proprietary/open drivers
     extraOptions = [ "--unsupported-gpu" ];
   };
 
@@ -44,7 +32,7 @@
     guiAddress = "127.0.0.1:8384";
   };
 
-  # Enable Graphics / Mesa drivers (with 32-bit support)
+  # Graphics / Mesa drivers (with 32-bit support)
   hardware.graphics = {
     enable = true;
     enable32Bit = true;

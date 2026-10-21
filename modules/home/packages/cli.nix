@@ -55,6 +55,8 @@
 	terraform
 	terraform-docs
 	google-cloud-sdk
-
+	yubikey-manager
 	];
 }
+
+

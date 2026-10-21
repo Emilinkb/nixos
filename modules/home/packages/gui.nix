@@ -19,7 +19,7 @@
 		#dev
 		sublime4
 		vscode
-
+		yubioath-flutter
 		#communication
 		goofcord
 
